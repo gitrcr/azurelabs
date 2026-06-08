@@ -77,7 +77,7 @@ module "linux" {
   resource_group_name = module.rg.name
   size                = "Standard_D2s_v3"
   sku                 = "22_04-lts"
-  subnet_id           = module.network.subnet_ids["srv"]
+  subnet_id           = module.network.subnet_ids["app"]
   has_public_ip       = false
   nsg_id              = module.security.nsg_ssh_id
   admin_username      = local.admin_username
