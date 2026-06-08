@@ -37,7 +37,8 @@ bash <(wget -qO - https://raw.githubusercontent.com/gitrcr/bootstrap/refs/heads/
 ## 3. Initialize modules and envs
 Root folder
 ```bash
-Get-ChildItem -Recurse -Directory | ForEach-Object { terraform init }
+Get-ChildItem -Recurse -Directory | ForEach-Object { Push-Location $_.FullName; terraform init; Pop-Location }   
+
 terraform fmt -check -recursive
 ```
 ## 4. Deploy(apply)  environment
