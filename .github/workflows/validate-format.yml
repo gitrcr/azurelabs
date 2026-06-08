@@ -1,4 +1,4 @@
-name: 'Terraform Unit Tests'
+name: 'Terraform Validate Format'
 
 on:
   push:
