@@ -3,7 +3,7 @@ name: 'Terraform Unit Tests'
 on:
   push:
     branches:
-      - 'develop/**'
+      - 'develop'
     paths:
       - 'environment/dev/**'
       - 'module/**'
