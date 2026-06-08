@@ -18,8 +18,8 @@ resource "azurerm_container_group" "container_group" {
 
   image_registry_credential {
     server   = "index.docker.io"
-    username = var.docker_username       # Tu usuario de Docker Hub
-    password = var.docker_password       # Tu Personal Access Token (NO tu contraseña)
+    username = var.docker_username # Tu usuario de Docker Hub
+    password = var.docker_password # Tu Personal Access Token (NO tu contraseña)
   }
 
   container {
@@ -32,7 +32,7 @@ resource "azurerm_container_group" "container_group" {
       port     = var.container_port
       protocol = "TCP"
     }
-  
+
   }
 
 }

@@ -9,15 +9,15 @@ variable "nsg_id" { type = string }
 
 variable "tags" { type = map(string) }
 variable "has_public_ip" {
-    type = bool
-    default = false
+  type    = bool
+  default = false
 }
-variable "size" {  
-  type        = string
-  default     = "Standard_D2s_v3"
+variable "size" {
+  type    = string
+  default = "Standard_D2s_v3"
 }
 
-variable "sku" {  
-  type        = string
-  default     = "22_04-lts"
+variable "sku" {
+  type    = string
+  default = "22_04-lts"
 }
