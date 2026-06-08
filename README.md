@@ -1,11 +1,9 @@
 # Lab Azure
-Create a basic infrastructure across 2 Azure sites using Terraform (requires git and terraform). 
-
+Create a basic infrastructure with 3 environments, across 2 Azure sites using Terraform
 
 **!! For laboratory use only !!**
 * Visible admin password
 * Azure credentials in terraform.tfvars
-* My token RO public repos in dockerhub
 
 **Description**: https://github.com/gitrcr/tfaz-basic/blob/main/description.md
 
@@ -36,24 +34,27 @@ bash <(wget -qO - https://raw.githubusercontent.com/gitrcr/bootstrap/refs/heads/
 * Paste it into terraform.tfvars.rename file for all environments.
 * Rename the file to terraform.tfvars
 
-## 3. Initialize, Apply, and Destroy
-Execute in each environment and module, or use **init_subdirs.ps1**
+## 3. Initialize modules and envs
+Root folder
 ```bash
-terraform init
-terraform fmt
+Get-ChildItem -Recurse -Directory | ForEach-Object { terraform init }
+terraform fmt -check -recursive
 ```
-Execute in each environment:
+## 4. Deploy(apply)  environment
+Execute in **environment/{env}** folder.
+
+### validate and create tfplan
 ```bash
 terraform validate
 terraform plan -out main.tfplan
-# Apply
+```
+### apply conf
+```bash
 terraform apply main.tfplan
-
 # Delete created objects
 # terraform destroy
 ```
-
-## 4. Usage
+## 5. Usage
 Structure and files config
 
 ### environment
@@ -61,7 +62,6 @@ Structure and files config
 
 * **locals.tf**: location, project, *env*, networking, naming   (*env* varible define project principal naming)
 * **main.tf**: instances number, network config, image          (*main.tf* to add modules o modify variables)
-
 
 ### modules
 Rehusable code, dont require modify.
