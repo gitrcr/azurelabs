@@ -1,4 +1,4 @@
-# Lab Azure DEv
+# Lab Azure
 Create a basic infrastructure across 2 Azure sites using Terraform (requires git and terraform). 
 
 
