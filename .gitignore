@@ -4,6 +4,7 @@
 
 *.lock.hcl
 *.tfplan
+.git/
 
 # Terraform .tfstate files
 *.tfstate
