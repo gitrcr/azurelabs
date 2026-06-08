@@ -3,7 +3,7 @@
 ########################
 
 locals {
-  project     = "azlab"
+  project     = "alab"
   environment = "dev"
   location    = "francecentral"
   rg_name     = "${local.environment}-rg"
